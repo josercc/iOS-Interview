@@ -185,3 +185,12 @@ isMemberOfClass只能判断是否是当前的类，isKindOfClass可以用来判�
 <summary>查看答案</summary>
 isa其实是一个结构体 isa对象指向当前类 当前类指向父类 父类指向元类也就是NSObject，元类指向自己。作用是方便找到对应所在的方法。
 </details>
+
+# 请描述一个你所遇到retain cycle例子
+<details>
+<summary>查看答案</summary>
+这个第一次解除Block时候应该经常用到，在Block内部使用self调用属性或者方法。
+</details>
+
+
+
