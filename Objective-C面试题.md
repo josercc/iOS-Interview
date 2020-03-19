@@ -260,3 +260,40 @@ NSLog(@"number = %@",object_getIvar(a, var));
 
 > Ivar对比KVC来说使用复杂，并且只支持对象类型。如果是基本类型直接在objc_getIvar方法崩溃。
 </details>
+
+# Objective-C 如何对已有的方法，添加自己的功能代码以实现类似记录日志这样的功能？
+<details>
+<summary>查看答案</summary>
+我们可以利用分类，通过交换方法实现。可以在方法之前也可以在方法后面。
+
+```objc
+@interface ClassA : NSObject
+@end
+
+@implementation ClassA
+
+- (void)printMyName {
+    NSLog(@"josercc");
+}
+
+@end
+
+@interface ClassA (Print)
+@end
+
+@implementation ClassA (Print)
+
++ (void)load {
+    Method method1 = class_getClassMethod(self, @selector(printMyName));
+    Method method2 = class_getClassMethod(self, @selector(printMyName1));
+    method_exchangeImplementations(method1, method2);
+}
+
+- (void)printMyName1 {
+    NSLog(@"Hello");
+    [self printMyName1];
+}
+
+@end
+```
+</details>
