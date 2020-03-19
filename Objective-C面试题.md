@@ -209,3 +209,9 @@ weak属性其实是系统维护的一个Hash表，系统会把weak声明的属�
 <summary>查看答案</summary>
 每个类里面都有一个method_list数组存储着这个类所有的方法和实现，通过selector对应的方法名称找到对应的方法和实现。
 </details>
+
+# +(void)load; +(void)initialize；有什么用处？
+<details>
+<summary>查看答案</summary>
+load放在会在第一次加载类方法会调用，调用顺序是先父类，然后子类，然后分类。initialize会在第一次调用类方法或者实例方法时候被调用。
+</details>
