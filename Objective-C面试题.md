@@ -173,3 +173,9 @@ block使用起来更加简单，比如访问作用域的变量还有代码逻辑
 <summary>查看答案</summary>
 这个其实是考察我们KVC的基本原理，都是可以的。
 </details>
+
+# isMemberOfClass 和 isKindOfClass 联系与区别
+<details>
+<summary>查看答案</summary>
+isMemberOfClass只能判断是否是当前的类，isKindOfClass可以用来判断是否是当前类或者子类。
+</details>
