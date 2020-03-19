@@ -167,3 +167,9 @@ block使用起来更加简单，比如访问作用域的变量还有代码逻辑
 <summary>查看答案</summary>
 分类只对于本次有效，推荐用分类。
 </details>
+
+# 若一个类有实例变量NSString *_foo，调用setValue:forKey:时，可以以foo还是_foo作为key
+<details>
+<summary>查看答案</summary>
+这个其实是考察我们KVC的基本原理，都是可以的。
+</details>
