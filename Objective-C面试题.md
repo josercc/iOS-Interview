@@ -315,3 +315,11 @@ NSLog(@"number = %@",object_getIvar(a, var));
 - __weak用来修饰实例变量
 - __block用来修饰可以在block内部修改外部变量
 </details>
+
+# 请说明并比较以下关键词：atomatic, nonatomic
+<details>
+<summary>查看答案</summary>
+
+- atomatic 是相对线程安全的因为会自动在set和get方法进行加锁 但是会额外的消耗性能 默认
+- nonatomic 是线程不安全的 性能好
+</details>
