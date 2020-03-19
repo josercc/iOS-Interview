@@ -113,3 +113,27 @@
 <summary>查看答案</summary>
 通过`copy`修饰的NSMutableArry对象变成了NSArray，这样在编译类型是NSMutableArray，在运行时是NSArray，这样我们在编译时候调用NSMutableArray方法是不报错的，但是在运行时候类型不一样从而导致崩溃发生。
 </details>
+
+# 如何为 Class 定义一个对外只读对内可读写的属性
+<details>
+<summary>查看答案</summary>
+我们可以在.h文件声明属性用readonly关键词，在.m声明同样的属性用readwrite默认的关键词。
+
+- .h
+
+```objc
+@interface ClassA : NSObject
+@property (nonatomic, assign, readonly) int number;
+@end
+```
+- .m
+
+```objc
+@interface ClassA ()
+@property (nonatomic, assign) int number;
+@end
+
+@implementation ClassA
+@end
+```
+</details>
