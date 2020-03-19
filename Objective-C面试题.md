@@ -341,5 +341,5 @@ NSLog(@"number = %@",object_getIvar(a, var));
 <details>
 <summary>查看答案</summary>
 
-> 我们发现了两个问题 第一点线程使用了休眠也就是用到了计时器。计时器需要在runloop中运行，而代码没有运行在任何的runloop，所以后面的代码不会执行。就算我们删掉了延时的操作，但是我们是在子线程操作的UI应该在主线程操作UI。
+> 我们是在子线程操作的UI应该在主线程操作UI不会更新(在Xcode11测试依然会更新，只是会报不能在子线程更新UI的警告)。
 </details>
