@@ -204,3 +204,8 @@ isa其实是一个结构体 isa对象指向当前类 当前类指向父类 父�
 weak属性其实是系统维护的一个Hash表，系统会把weak声明的属性的内存地址作为key存放在hash表里面。当这个属性引用技术为0走dealloc方法时候，通过对应内存地址作为key再从hash表移出出去。
 </details>
 
+# runtime如何通过selector找到对应的IMP地址？
+<details>
+<summary>查看答案</summary>
+每个类里面都有一个method_list数组存储着这个类所有的方法和实现，通过selector对应的方法名称找到对应的方法和实现。
+</details>
