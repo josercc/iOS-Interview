@@ -297,3 +297,13 @@ NSLog(@"number = %@",object_getIvar(a, var));
 @end
 ```
 </details>
+
+# 请说明并比较以下关键词：strong, weak, assign, copy
+<details>
+<summary>查看答案</summary>
+
+- strong 会持有对象，会使对象引用计数加1
+- weak 不会持有对象 只是存储了对象的内存地址
+- assgin 用于声明基本类型 被assgin声明的会存放在栈区
+- copy 会复制一份内存地址 一般用于NSString NSArray NSDictionary
+</details>
