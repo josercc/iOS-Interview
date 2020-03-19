@@ -107,3 +107,9 @@
   <summary>查看答案</summary>
   我们知道`copy`关键词是复制一份内存地址，用新的指针指向。是属于深拷贝，而用`strong`关键字是通过一个指针指向对象的内存地址，通过内存地址访问对象，是属于浅拷贝。对于`strong`声明的字符串 数组字典其他地方可以通过地址直接修改对象。
 </details>
+
+# 这个写法会出什么问题： @property (copy) NSMutableArray *array
+<details>
+<summary>查看答案</summary>
+通过`copy`修饰的NSMutableArry对象变成了NSArray，这样在编译类型是NSMutableArray，在运行时是NSArray，这样我们在编译时候调用NSMutableArray方法是不报错的，但是在运行时候类型不一样从而导致崩溃发生。
+</details>
