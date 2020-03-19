@@ -307,3 +307,10 @@ NSLog(@"number = %@",object_getIvar(a, var));
 - assgin 用于声明基本类型 被assgin声明的会存放在栈区
 - copy 会复制一份内存地址 一般用于NSString NSArray NSDictionary
 </details>
+
+# 请说明并比较以下关键词：__weak，__block
+<details>
+<summary>查看答案</summary>
+- __weak用来修饰实例变量
+- __block用来修饰可以在block内部修改外部变量
+</details>
