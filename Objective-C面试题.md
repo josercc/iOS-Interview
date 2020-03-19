@@ -341,5 +341,5 @@ NSLog(@"number = %@",object_getIvar(a, var));
 <details>
 <summary>查看答案</summary>
 
-> 我们是在子线程操作的UI应该在主线程操作UI不会更新(在Xcode11测试依然会更新，只是会报不能在子线程更新UI的警告)。
+> 我们是在子线程操作的UI应该在主线程操作UI不会更新(在Xcode11测试依然会更新，只是会报不能在子线程更新UI的警告 -[UILabel setText:] must be used from main thread only)。
 </details>
