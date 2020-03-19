@@ -215,3 +215,48 @@ weak属性其实是系统维护的一个Hash表，系统会把weak声明的属�
 <summary>查看答案</summary>
 load放在会在第一次加载类方法会调用，调用顺序是先父类，然后子类，然后分类。initialize会在第一次调用类方法或者实例方法时候被调用。
 </details>
+
+# 如何访问并修改一个类的私有属性？
+<details>
+<summary>查看答案</summary>
+可以通过KVC或者通过ivar进行访问。
+	
+- 类实现
+
+```objc
+@interface ClassA : NSObject
+@end
+
+@implementation ClassA {
+    int _number;
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _number = 10;
+    }
+    return self;
+}
+
+@end
+```
+- KVC
+
+```objc
+ClassA *a = [[ClassA alloc] init];
+NSLog(@"number = %@",[a valueForKey:@"number"]);
+[a setValue:@(5) forKey:@"number"];
+NSLog(@"number = %@",[a valueForKey:@"number"]);
+```
+- Ivar
+
+```objc
+ClassA *a = [[ClassA alloc] init];
+Ivar var = class_getInstanceVariable([ClassA class], "_name");
+NSLog(@"number = %@",object_getIvar(a, var));
+object_setIvar(a, var, @"joser");
+NSLog(@"number = %@",object_getIvar(a, var));
+```
+
+> Ivar对比KVC来说使用复杂，并且只支持对象类型。如果是基本类型直接在objc_getIvar方法崩溃。
+</details>
