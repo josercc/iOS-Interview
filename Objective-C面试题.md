@@ -22,3 +22,82 @@
   <summary>查看答案</summary>
   当使用代理 或者声明@IBOutlet和不持有对象的时候可以使用weak关键词。weak是弱引用，只是用指针指向对应对象的内存地址，不会对对象进行引用技术加1。assign会将声明的基本变量放在栈区，交给系统自动管理内存。
 </details>
+
+# @protocol 和 category 中如何使用 @property
+<details>
+  <summary>查看答案</summary>
+	@protocol中的@property和@category中的@property其实都是包含了set和get方法。对于@protocol所有实现协议的类都要实现对应@property属性的set和get方法。@category中的要自己实现set和get方法，虽然分类不支持属性，但是我们可以通过关联对象来实现。
+
+  - @protocol
+
+  ```objc
+@protocol ProtocolA <NSObject>
+@property (nonatomic, assign) int number;
+@end
+
+@interface ClassA : NSObject<ProtocolA>
+
+@end
+
+@implementation ClassA {
+    int _number;
+}
+
+- (void)setNumber:(int)number {
+    _number = number;
+}
+
+- (int)number {
+    return _number;
+}
+
+```
+
+```objc
+@protocol ProtocolA <NSObject>
+@property (nonatomic, assign) int number;
+@end
+
+@interface ClassA : NSObject<ProtocolA>
+
+@end
+
+@implementation ClassA
+@synthesize number = _number;
+
+
+@end
+
+@interface AppDelegate ()
+
+@end
+```
+我们看出来通过中间变量自己实现set和get方法和通过@synthesize关键字让系统自动生成都是可以的，不过还是使用@synthesize让系统自动生成set和get方法比较简单
+
+- @category
+
+```objc
+@interface ClassA : NSObject
+@end
+
+@implementation ClassA
+@end
+
+@interface ClassA (Number)
+@property (nonatomic, assign) int number;
+@end
+
+@implementation ClassA (Number)
+
+- (int)number {
+    return [objc_getAssociatedObject(self,@selector(number)) intValue];
+}
+
+- (void)setNumber:(int)number {
+    objc_setAssociatedObject(self, @selector(number), @(number), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+@end
+```
+我们可以通过`objc_getAssociatedObject`和`objc_setAssociatedObject`两个方法来为分类添加属性。
+</details>
