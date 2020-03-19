@@ -323,3 +323,23 @@ NSLog(@"number = %@",object_getIvar(a, var));
 - atomatic 是相对线程安全的因为会自动在set和get方法进行加锁 但是会额外的消耗性能 默认
 - nonatomic 是线程不安全的 性能好
 </details>
+
+# 下面代码中有什么bug？
+```objc
+- (void)viewDidLoad {
+  UILabel *alertLabel = [[UILabel alloc] initWithFrame:CGRectMake(100,100,100,100)];
+  alertLabel.text = @"Wait 4 seconds...";
+  [self.view addSubview:alertLabel];
+
+  NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+  [backgroundQueue addOperationWithBlock:^{
+    [NSThread sleepUntilDate:[NSDate dateWithTimeIntervalSinceNow:4]];
+    alertLabel.text = @"Ready to go!”
+  }];
+}
+```
+<details>
+<summary>查看答案</summary>
+
+> 我们发现了两个问题 第一点线程使用了休眠也就是用到了计时器。计时器需要在runloop中运行，而代码没有运行在任何的runloop，所以后面的代码不会执行。就算我们删掉了延时的操作，但是我们是在子线程操作的UI应该在主线程操作UI。
+</details>
