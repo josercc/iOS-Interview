@@ -179,3 +179,9 @@ block使用起来更加简单，比如访问作用域的变量还有代码逻辑
 <summary>查看答案</summary>
 isMemberOfClass只能判断是否是当前的类，isKindOfClass可以用来判断是否是当前类或者子类。
 </details>
+
+# 一个objc对象的isa的指针指向什么？有什么作用？
+<details>
+<summary>查看答案</summary>
+isa其实是一个结构体 isa对象指向当前类 当前类指向父类 父类指向元类也就是NSObject，元类指向自己。作用是方便找到对应所在的方法。
+</details>
