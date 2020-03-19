@@ -10,3 +10,9 @@
 <summary>查看答案</summary>
   @public代表可以在任何地方都可以被访问，@protected表示只能可以在子类和本类可以访问，@private表示只允许在本类允许访问
 </details>
+
+# 请解释self = [super init]方法
+<details>
+<summary>查看答案</summary>
+  因为子类是继承与父类的，如果父类都初始化失败返回nil,那么子类也没有必要的执行下去了。其实是一种容错的处理。
+</details>
