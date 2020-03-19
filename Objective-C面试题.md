@@ -101,3 +101,9 @@
 ```
 我们可以通过`objc_getAssociatedObject`和`objc_setAssociatedObject`两个方法来为分类添加属性。
 </details>
+
+# 用@property声明的NSString（或NSArray，NSDictionary）经常使用copy关键字，为什么？如果改用strong关键字，可能造成什么问题？
+<details>
+  <summary>查看答案</summary>
+  我们知道`copy`关键词是复制一份内存地址，用新的指针指向。是属于深拷贝，而用`strong`关键字是通过一个指针指向对象的内存地址，通过内存地址访问对象，是属于浅拷贝。对于`strong`声明的字符串 数组字典其他地方可以通过地址直接修改对象。
+</details>
