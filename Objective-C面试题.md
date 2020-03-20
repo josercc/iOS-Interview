@@ -453,3 +453,13 @@ dispatch_resume(timer);
 	
 反射机制就是通过字符串反射为对应的类，协议，方法。或者将协议，方法或者类反射为字符串。通常用于做模块化跳转，或者用于做`deeplink`等运行时创建类等功能。
 </details>
+
+# Objective-C中的协议默认是@optional还是@require？在使用协议的时候应当注意哪些问题？
+<details>
+<summary>查看答案</summary>
+
+协议默认为`@require`，使用时候要注意用`weak`声明代理，防止循环引用。
+</details>
+
+
+
