@@ -439,3 +439,10 @@ dispatch_resume(timer);
 	
 系统分配18个字节，但是真正占用只有8个字节。
 </details>
+
+# 方法和选择器有何不同？(Difference between method and selector?)
+<details>
+<summary>查看答案</summary>
+
+`selector`只是代表方法名称，而`method`包含了名称和实现。
+</details>
