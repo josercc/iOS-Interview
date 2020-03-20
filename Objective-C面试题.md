@@ -370,3 +370,10 @@ OC并不存在严格来说的私有方法和私有变量。对于用@public修�
 `UITableView`有两个实例变量，`visiableCells`保存当前界面显示的Cell的数组，`reusableTableCells`保存在可以重用的Cell的字典。当第一次加载界面，`reusableTableCells`没有任何重用的Cell就会走`UITableViewCell`的初始化方法进行创建，之后添加到`visiableCells`数组里面。当界面滚动时候，原本展示的Cell消失在屏幕之后。对应的`Cell`对象就会添加到`reusableTableCells`里面，即而从`visiableCells`数组里面进行移出。当一个新的cell将展示时候从`reusableTableCells`查看是否存在重用的，如果存在就展示重用的，如果没有就重新走创建的流程。
 </details>
 
+# ViewController的didReceiveMemoryWarning是在什么时候调用的？默认的操作是什么？
+<details>
+<summary>查看答案</summary>
+
+当手机内存运行不足时候会调用`ViewController`的`didReceiveMemoryWarning`方法，默认时尝试释放`ViewController`所拥有的`View`。我们也可以重写做其他释放内存的任务。
+</details>
+
