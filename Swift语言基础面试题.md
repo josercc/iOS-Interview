@@ -25,3 +25,27 @@
   }
   ```
 </details>
+
+# map、filter、reduce 的作用
+<details>
+<summary>查看答案</summary>
+  
+- map可以通过闭包将元素转换称其他元素
+> 比如将一组数组转换成字符串
+```objc
+let numbers:[Int] = [1,2,3,4,5]
+let strings:[String]? = try? numbers.map{"\($0)"}
+```
+- filter可以将元素过滤组成另外的集合
+> 比如将一组数字过滤掉小于3的
+```objc
+let numbers:[Int] = [1,2,3,4,5]
+let filters = try? numbers.filter{$0<3}
+```
+- reduce是将数组合并称一个元素
+> 算出一组数字的和
+```objc
+let numbers:[Int] = [1,2,3,4,5]
+let reduce = try? numbers.reduce(0){$0+$1}
+```
+</details>
