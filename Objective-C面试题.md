@@ -384,3 +384,10 @@ OC并不存在严格来说的私有方法和私有变量。对于用@public修�
 `delegate`是一对一的关系，`notification`是一对多的关系。`delegate`通畅用于开放接口用于其他模块的调用，`notification`可以做到模块分离，通畅用于模块之间的通信。
 </details>
 
+# id、nil代表什么？
+<details>
+<summary>查看答案</summary>
+	
+`id`代表在`OC`里面的对象的指针，`nil`代表是指针指向一个空的对象。
+</details>
+
