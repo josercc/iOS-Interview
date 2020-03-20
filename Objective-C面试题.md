@@ -391,3 +391,35 @@ OC并不存在严格来说的私有方法和私有变量。对于用@public修�
 `id`代表在`OC`里面的对象的指针，`nil`代表是指针指向一个空的对象。
 </details>
 
+# timer的间隔周期准吗？为什么？怎样实现一个精准的timer?
+<details>
+<summary>查看答案</summary>
+	
+`NSTimer`因为是添加到`runloop`中的走的是默认的`mode`，当滑动表格的时候就会切换对应`mode`停止`timer`。`runloop`因为优先在触发时候执行输入源，才会执行`runloop`中的任务，虽有会有`50-100`毫秒的误差。
+
+我们想做一个精准的`timer`就需要创建一个新的`runloop`来不受其他输入源的影响。
+
+- 添加`Timer`到当前的`runloop`设置为`NSRunLoopCommonModes`
+```objc
+_timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+				      target:self
+				    selector:@selector(timerStart)
+				    userInfo:nil
+				     repeats:YES];
+[[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+```
+- 在新线程添加`NSTimer`
+```objc
+dispatch_async(dispatch_queue_create("", 0), ^{
+@autoreleasepool {
+    self->_timer = [NSTimer scheduledTimerWithTimeInterval:1.0
+					      target:self
+					    selector:@selector(timerStart)
+					    userInfo:nil
+					     repeats:YES];
+    [[NSRunLoop currentRunLoop] run];
+}
+});
+```
+对比还是第一种方案简单，第二种执行的任务会在子线程，容易写出BUG.
+</details>
