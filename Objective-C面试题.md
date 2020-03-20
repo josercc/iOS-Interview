@@ -432,3 +432,10 @@ dispatch_resume(timer);
 ```
 对比还是第三种方案简单，第二种执行的任务会在子线程，容易写出BUG，第一种容易遗漏添加到`runloop`设置对应的`mode`。第三种有现成的代码块，而且还十分的精准。
 </details>
+
+# 一个 NSObject 对象占用多少内存？
+<details>
+<summary>查看答案</summary>
+	
+系统分配18个字节，但是真正占用只有8个字节。
+</details>
