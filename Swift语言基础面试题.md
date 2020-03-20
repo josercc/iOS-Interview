@@ -49,3 +49,6 @@ let numbers:[Int] = [1,2,3,4,5]
 let reduce = try? numbers.reduce(0){$0+$1}
 ```
 </details>
+
+# map 与 flatmap 的区别
+
