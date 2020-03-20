@@ -421,5 +421,14 @@ dispatch_async(dispatch_queue_create("", 0), ^{
 }
 });
 ```
-对比还是第一种方案简单，第二种执行的任务会在子线程，容易写出BUG.
+- GCD
+```objc
+timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1.0 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+dispatch_source_set_event_handler(timer, ^{
+NSLog(@"timer");
+});
+dispatch_resume(timer);
+```
+对比还是第三种方案简单，第二种执行的任务会在子线程，容易写出BUG，第一种容易遗漏添加到`runloop`设置对应的`mode`。第三种有现成的代码块，而且还十分的精准。
 </details>
