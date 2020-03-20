@@ -14,3 +14,14 @@
   - 协议
   - 扩展
 </details>
+
+# 实现一个 min 函数，返回两个元素较小的元素
+<details>
+  <summary>查看答案</summary>
+  
+  ```objc
+  func min<T:Comparable>(_ left:T, _ right:T) -> T {
+    return left > right ? right : left
+  }
+  ```
+</details>
