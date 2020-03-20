@@ -446,3 +446,10 @@ dispatch_resume(timer);
 
 `selector`只是代表方法名称，而`method`包含了名称和实现。
 </details>
+
+# 你是否接触过OC中的反射机制？简单聊一下概念和使用
+<details>
+<summary>查看答案</summary>
+	
+反射机制就是通过字符串反射为对应的类，协议，方法。或者将协议，方法或者类反射为字符串。通常用于做模块化跳转，或者用于做`deeplink`等运行时创建类等功能。
+</details>
