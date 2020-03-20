@@ -343,3 +343,11 @@ NSLog(@"number = %@",object_getIvar(a, var));
 
 > 我们是在子线程操作的UI应该在主线程操作UI不会更新(在Xcode11测试依然会更新，只是会报不能在子线程更新UI的警告 -[UILabel setText:] must be used from main thread only)。
 </details>
+
+# Object-C有多继承吗？没有的话用什么代替？cocoa 中所有的类都是NSObject 的子类
+<details>
+<summary>查看答案</summary>
+OC是没有多继承的，可以通过协议进行代替。
+</details>
+
+
