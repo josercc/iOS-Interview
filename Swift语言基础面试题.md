@@ -34,7 +34,7 @@
 > 比如将一组数组转换成字符串
 ```objc
 let numbers:[Int] = [1,2,3,4,5]
-let strings:[String]? = try? numbers.map{"\($0)"}
+let strings:[String]? = try? numbers.map{"\\($0)"}
 ```
 - filter可以将元素过滤组成另外的集合
 > 比如将一组数字过滤掉小于3的
