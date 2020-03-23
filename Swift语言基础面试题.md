@@ -79,3 +79,10 @@ print(flatmaps) // ["3", "4", "5"]
 - 代码的黄金大道
 - 对可选类型进行解包
 </details>
+
+# defer 使用场景
+<details>
+<summary>查看答案</summary>
+  
+在当前作用域退出之前执行，一般用于清理资源，或者返回值逻辑容错。
+</details>
