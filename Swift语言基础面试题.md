@@ -86,3 +86,10 @@ print(flatmaps) // ["3", "4", "5"]
   
 在当前作用域退出之前执行，一般用于清理资源，或者返回值逻辑容错。
 </details>
+
+# swift中,如何阻止一个方法属性,属性,下标被子类改写
+<details>
+<summary>查看答案</summary>
+  
+用`final`关键词进行修饰,被`final`修饰的类不能被继承，被`final`修饰的方法 属性不能被重写。
+</details>
