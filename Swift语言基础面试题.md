@@ -51,4 +51,17 @@ let reduce = try? numbers.reduce(0){$0+$1}
 </details>
 
 # map 与 flatmap 的区别
+<details>
+<summary>查看答案</summary>
+  
+`flatmap`可以将集合的空值过滤。
+> ⚠️最新`flatmap`已经废弃，替换称`compactMap`
+```swift
+let numbers:[Int] = [1,2,3,4,5]
+let maps = numbers.map{$0<3 ? nil:"\($0)"}
+let flatmaps = numbers.compactMap{$0<3 ? nil:"\($0)"}
+print(maps) // [nil, nil, Optional("3"), Optional("4"), Optional("5")]
+print(flatmaps) // ["3", "4", "5"]
+```
+</details>
 
