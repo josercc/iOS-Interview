@@ -71,3 +71,11 @@ print(flatmaps) // ["3", "4", "5"]
   
 开始只复制引用类型，到真正赋值才真正的值拷贝。
 </details>
+
+# guard 使用场景
+<details>
+<summary>查看答案</summary>
+  
+- 代码的黄金大道
+- 对可选类型进行解包
+</details>
