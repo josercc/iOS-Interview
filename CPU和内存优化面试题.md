@@ -35,3 +35,12 @@ iOS的内存类型分为三种
 
 因为在内存吃紧的时候，`NSCache`会自动释放内存，但是`Dirtionary`不会。
 </details>
+
+# 一张500x500大小的图片在iOS占用多少内存？
+
+<details>
+  <summary>查看答案</summary>
+
+
+  500x500x8 / (1024 * 1024) ~= 0.95MB 
+</details>
