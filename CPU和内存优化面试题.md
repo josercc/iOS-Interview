@@ -26,5 +26,12 @@ iOS的内存类型分为三种
 - Compressed Memory
 
   > 当内存吃紧的时候，系统会将不适用的内存压紧。比如用`Dictionary`缓存数据占用三页内存，当内存吃紧被压缩为一页，当再次使用，再次被释放成三页。
-  > </details>
+  </details>
 
+# 为什么缓存数据要推荐用NSCache替换Dictionary？
+
+<details>
+<summary>查看答案</summary>
+
+因为在内存吃紧的时候，`NSCache`会自动释放内存，但是`Dirtionary`不会。
+</details>
