@@ -92,3 +92,15 @@ iOS的内存类型分为三种
 - 离屏渲染的过程需要多次切换上下文
 
 </details>
+
+# 离屏渲染出现的原因？
+
+<details>
+<summary>查看答案</summary>
+
+- layer.shouldRasterize = YES
+- 设置遮罩 layer.mask
+- 设置圆角
+- 设置阴影
+
+</details>
