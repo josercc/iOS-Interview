@@ -78,25 +78,18 @@
 
 </details>
 
-# class_rw_t和class_ro_t
+# class_ro_t 和 class_rw_t 的区别？
 
 <details>
 <summary>查看答案</summary>
 
+  `class_ro_t`
+
+> 包含了编译时期确定的协议列表`protocols`，方法列表`method_list`，属性列表`propertys`。
+
 `class_rw_t`
 
-- `class_ro_t`
-- 协议protocols
-- 方法methods
-- 属性propertys
-
-`class_ro_t`
-
-- 类名
-- ivar成员变量
-- 协议protocols
-- 属性propertys
-- 方法列表method_list
+> 包含了`class_ro_t`还包含编译和运行时全部的协议列表`protocols`，属性列表`propertys`，方法列表`mentods`。
 
 </details>
 
