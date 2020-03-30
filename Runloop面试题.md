@@ -108,3 +108,16 @@
  输出顺序是`1 4 2 3`，因为 `performSelector:withObject:afterDelay`会自动创建一个`NSTimer`添加到当前的RunLoop中，但是当前线程没有获取RunLoop，所以不存在RunLoop，所以对应方法创建的`NSTimer`也不会运行，自然不会运行`test`方法。
 
 </details>
+
+# 怎样保证子线程数据回来更新UI的时候不打断用户的滑动操作
+
+<details>
+<summary>查看答案</summary>
+
+因为滑动操作当前的RunLoop运行在`Tracking Mode`上面，为了不打断用户的操作，我们可以在`Default Mode`上面进行刷新数据，也就是等待滑动结束之后，当前的RunLoop从`Tracking Mode`切换到`Default Mode`再去更新数据。
+
+```objc
+[self performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO modes:@[NSDefaultRunLoopMode]];
+```
+
+</details>
