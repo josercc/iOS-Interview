@@ -64,3 +64,16 @@
  输出结果为`self.name = <ViewController: 0x7fe667608ae0>`，不会崩溃。 
 
 </details>
+
+# Runtime的功能
+
+<details>
+<summary>查看答案</summary>
+
+- 发送消息
+- 交换方法
+- 动态添加方法
+- 关联属性
+- 字典转模型
+
+</details>
