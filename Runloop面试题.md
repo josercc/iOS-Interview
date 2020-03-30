@@ -25,3 +25,15 @@
 `Runloop`存在五种运行`mode`，`NSTimer`默认运行在`default mode`上面的，当列表滚动的时候，切换称`Tracking Mode`。`default mode`就会暂停，这就是为什么`NStimer`在列表滚动时候失效，解决的办法将`NStimer`添加到`common mode`里面。
 
 </details>
+
+# Runloop的作用
+
+<details>
+<summary>查看答案</summary>
+
+- 保持应用的持续运行
+- 处理App的各种事件
+- 节省CPU资源，提升性能。
+- 负责渲染界面的UI
+
+</details>
