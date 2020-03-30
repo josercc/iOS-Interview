@@ -99,3 +99,12 @@
 - 方法列表method_list
 
 </details>
+
+# Category 的实现原理？
+
+<details>
+<summary>查看答案</summary>
+
+ `Category`其实是一个`Category_t`的结构体，在运行时通过倒序的方法添加到原方法列表。所以分类的方法优先于原类的方法，分类的方法优先级取决于编译顺序。
+
+</details>
