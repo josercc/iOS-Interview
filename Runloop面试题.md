@@ -56,3 +56,12 @@
   > ```
 
 </details>
+
+# RunLoop和AutoreleasePool的关系
+
+<details>
+<summary>查看答案</summary>
+
+`RunLoop`进行处理事件的时候会自动创建一个`AutoreleasePool`，在处理事件过程中会将发送`autorelease`消息的对象添加到`AutoreleasePool`中。等待`RunLoop`处理事件结束，就释放当前的`AutoreleasePool`。`AutoreleasePool`则会将所有的对象进行`release`-1操作。
+
+</details>
