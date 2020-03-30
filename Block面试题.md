@@ -10,11 +10,11 @@
 
 - NSMallocBlock
 
-  > 在进程堆创建的Block 使用了局部变量但是未进行copy的
+  > 在进程堆创建的Block 通过Copy之后的Block
 
 - NSStackBlock
 
-  > 在进程栈创建的Block，通过Copy之后的Block
+  > 在进程栈创建的Block，使用局部变量并未copy操作的
 
 </details>
 
