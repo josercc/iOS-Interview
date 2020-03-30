@@ -36,3 +36,18 @@
 
 `Block`是对象，封装了一块代码，可以在任何时候运行。`Block`可以作为方法参数，也可以作为方法返回值。自己又带有参数和返回值，和代理的功能相同。
 </details>
+
+# 使用block和使用delegate有什么不同
+
+<details>
+<summary>查看答案</summary>
+
+-  Block
+
+  > 代码更加的紧凑，使用方便
+
+- Delegate
+
+  > 方法语义明显，适合作为作为第三方接口
+
+</details>
