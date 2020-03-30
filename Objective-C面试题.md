@@ -510,4 +510,12 @@ dispatch_resume(timer);
 
 </details>
 
+# 能否向已经编译的类添加实例变量
+
+<details>
+<summary>查看答案</summary>
+
+ 不能，因为编译之后类的内存大小已经固定不能再添加实例变量，但是可以动态的添加实例变量。 
+
+</details>
 
