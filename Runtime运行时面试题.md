@@ -33,3 +33,34 @@
  不管是在`ARC`还是`MRC`中关联的对象都不需要在主对象`delloc`时候释放，因为关联的对象释放的比较晚，会在`NSObject`调用`dealloc`方法中进行释放。 
 
 </details>
+
+# 输出结果是啥，会不会崩溃?
+
+```objc
+@interface MNPerson : NSObject
+@property (nonatomic, copy)NSString *name;
+- (void)print;
+@end
+
+@implementation MNPerson
+- (void)print{
+    NSLog(@"self.name = %@",self.name);
+}
+@end
+---------------------------------------------------
+@implementation ViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    id cls = [MNPerson class];
+    void *obj = &cls;
+    [(__bridge id)obj print];
+}
+@end
+```
+
+<details>
+<summary>查看答案</summary>
+
+ 输出结果为`self.name = <ViewController: 0x7fe667608ae0>`，不会崩溃。 
+
+</details>
