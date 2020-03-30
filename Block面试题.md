@@ -51,3 +51,12 @@
   > 方法语义明显，适合作为作为第三方接口
 
 </details>
+
+# __block和__weak修饰符的区别
+
+<details>
+<summary>查看答案</summary>
+
+`__block` 修饰的变量可以在`Block`内部进行修改，`__weak`修饰的对象可以在`Block`使用防止循环引用。
+
+</details>
