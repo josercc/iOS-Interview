@@ -16,7 +16,7 @@
 
 </details>
 
-# 什么么是runtime
+# 什么是runtime
 
 <details>
 <summary>查看答案</summary>
