@@ -461,5 +461,46 @@ dispatch_resume(timer);
 协议默认为`@require`，使用时候要注意用`weak`声明代理，防止循环引用。
 </details>
 
+# 通知的实现机制？为什么有时候监听的名称和发送通知名称相同却收不到回调。
+
+<details>
+<summary>查看答案</summary>
+  
+  通知底层核心是存在一个`notication_map`的字典，通知的名称作为`Key`，`Value`为数组结构，数组的每个元素包含了监听的对象，方法名称，还有传递的参数。当发送通知的时候，会在`notication_map`的字典当中找到对应`key`的数组，通过遍历数组，对数组里面所有的监听者发送通知。当发送参数和监听的参数不一样的时候，会被忽略，这就是为什么名字相同却收不到通知。
+
+- 当接受通知的参数为空可以接受发送通知参数为空或者不为空
+
+  可以接受到通知
+
+  ```swift
+  NotificationCenter.default.addObserver(self, selector: #selector(revicerNotication(_:)), name: NSNotification.Name(rawValue: "test notification"), object: nil)
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "test notification"), object: nil)
+  ```
+
+  ```swift
+  NotificationCenter.default.addObserver(self, selector: #selector(revicerNotication(_:)), name: NSNotification.Name(rawValue: "test notification"), object: nil)
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "test notification"), object: "234")
+  ```
+
+  ```swift
+  NotificationCenter.default.addObserver(self, selector: #selector(revicerNotication(_:)), name: NSNotification.Name(rawValue: "test notification"), object: "234")
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "test notification"), object: "234")
+  ```
+
+  不可以接受到通知
+
+  ```swift
+  NotificationCenter.default.addObserver(self, selector: #selector(revicerNotication(_:)), name: NSNotification.Name(rawValue: "test notification"), object: "234")
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "test notification"), object: nil)
+  ```
+
+  ```swift
+  NotificationCenter.default.addObserver(self, selector: #selector(revicerNotication(_:)), name: NSNotification.Name(rawValue: "test notification"), object: "234")
+          NotificationCenter.default.post(name: NSNotification.Name(rawValue: "test notification"), object: "123")
+  ```
+
+</details>
+
+
 
 
