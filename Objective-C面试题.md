@@ -501,6 +501,13 @@ dispatch_resume(timer);
 
 </details>
 
+# KVO (Key-value observing)的实现机制
 
+<details>
+<sunmary>查看答案</summary>
+	
+  `KVO`系统通过`isa混淆`技术通过创建类的不可见子类，通过重写`set`和`get`方法来实现监听机制的。对于没有调用`set`和`get`方法是调用不了监听机制的，需要手动调用`willChangeValueForKey`和`didChangeValueForKey`触发。
+
+</details>
 
 
