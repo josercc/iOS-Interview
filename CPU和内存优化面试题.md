@@ -104,3 +104,15 @@ iOS的内存类型分为三种
 - 设置阴影
 
 </details>
+
+# 一段动画的执行步骤
+
+<details>
+<summary>查看答案</summary>
+
+- 布局
+- 显示
+- 准备
+- 提交
+
+</details>
