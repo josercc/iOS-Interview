@@ -108,3 +108,16 @@
  `Category`其实是一个`Category_t`的结构体，在运行时通过倒序的方法添加到原方法列表。所以分类的方法优先于原类的方法，分类的方法优先级取决于编译顺序。
 
 </details>
+
+# runtime 如何实现 weak 属性？
+
+<details>
+<summary>查看答案</summary>
+
+  其实系统的内部维护着一个`weak`的`hashMap`,通过内存地址作为`key`，`weak`指针作为`value`，当对象的引用计数为0就会释放。
+
+- 初始化时候，调用`objc_initWeak`创建一个`weak`指针指向对象内存地址
+- 添加引用调用`objc_storeWeak() `。
+- 当释放时候，会通过对象内存地址便利`weak`的`hashMap`，释放所有该对象的`weak`指针。
+
+</details>
