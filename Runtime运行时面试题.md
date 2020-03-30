@@ -15,3 +15,12 @@
  `SEL`指代的方法的名称，`IMP`指代方法的具体实现。 
 
 </details>
+
+# 什么么是runtime
+
+<details>
+<summary>查看答案</summary>
+
+ `Runtime`是`OC`的运行时机制，主要时消息转发，对于`OC`来说，只有在运行时才能知道调用的函数。 
+
+</details>
