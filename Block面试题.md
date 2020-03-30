@@ -28,3 +28,11 @@
 `Block`访问`__block`修饰的变量，会通过`__forwarding`基数将外部的变量`copy`一份内存地址到`Block`结构体内部，从而可以修改外部的变量。
 
 </details>
+
+# 什么是block
+
+<details>
+<summary>查看答案</summary>
+
+`Block`是对象，封装了一块代码，可以在任何时候运行。`Block`可以作为方法参数，也可以作为方法返回值。自己又带有参数和返回值，和代理的功能相同。
+</details>
