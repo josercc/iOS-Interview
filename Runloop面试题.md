@@ -37,3 +37,22 @@
 - 负责渲染界面的UI
 
 </details>
+
+# Runloop 获取
+
+<details>
+<summary>查看答案</summary>
+
+- 获取主线程对应的`Runloop`
+
+  > ```objc
+  > [NSRunLoop mainRunLoop]
+  > ```
+
+- 获取当前线程对应的`RunLoop`
+
+  > ```objc
+  > [NSRunLoop currentRunLoop]
+  > ```
+
+</details>
