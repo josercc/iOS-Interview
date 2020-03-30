@@ -121,3 +121,12 @@
 ```
 
 </details>
+
+# 解释一下 `GCD` 在 `Runloop` 中的使用
+
+<details>
+<summary>查看答案</summary>
+
+ GCD只有在回到主线程的时候才会获取当前的RunLoop，会触发RunLoop的Source1事件。 
+
+</details>
