@@ -24,3 +24,12 @@
  `Runtime`是`OC`的运行时机制，主要时消息转发，对于`OC`来说，只有在运行时才能知道调用的函数。 
 
 </details>
+
+## 使用runtime Associate方法关联的对象，需要在主对象dealloc的时候释放么？
+
+<details>
+<summary>查看答案</summary>
+
+ 不管是在`ARC`还是`MRC`中关联的对象都不需要在主对象`delloc`时候释放，因为关联的对象释放的比较晚，会在`NSObject`调用`dealloc`方法中进行释放。 
+
+</details>
