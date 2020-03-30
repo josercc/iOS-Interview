@@ -77,3 +77,25 @@
 - 字典转模型
 
 </details>
+
+# class_rw_t和class_ro_t
+
+<details>
+<summary>查看答案</summary>
+
+`class_rw_t`
+
+- `class_ro_t`
+- 协议protocols
+- 方法methods
+- 属性propertys
+
+`class_ro_t`
+
+- 类名
+- ivar成员变量
+- 协议protocols
+- 属性propertys
+- 方法列表method_list
+
+</details>
