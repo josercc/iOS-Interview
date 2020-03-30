@@ -6,11 +6,11 @@
 
 - NSGlobaleBlock
 
-  > 全局的Block.也就是创建的静态 常量的Block
+  > 全局的Block.未使用局部变量的Block
 
 - NSMallocBlock
 
-  > 在进程堆创建的Block 参数变量，临时变量。
+  > 在进程堆创建的Block 使用了局部变量但是未进行copy的
 
 - NSStackBlock
 
