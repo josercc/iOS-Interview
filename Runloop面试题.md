@@ -82,3 +82,29 @@
 ```
 
 </details>
+
+# 下边代码的执行顺序
+
+```objc
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    NSLog(@"1");
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"2");
+        [self performSelector:@selector(test) withObject:nil afterDelay:10];
+        NSLog(@"3");
+    });
+    NSLog(@"4");
+}
+
+- (void)test {
+    NSLog(@"5");
+}
+```
+
+<details>
+<summary>查看答案</summary>
+
+ 输出顺序是`1 4 2 3`，因为 `performSelector:withObject:afterDelay`会自动创建一个`NSTimer`添加到当前的RunLoop中，但是当前线程没有获取RunLoop，所以不存在RunLoop，所以对应方法创建的`NSTimer`也不会运行，自然不会运行`test`方法。
+
+</details>
