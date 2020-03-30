@@ -121,3 +121,13 @@
 - 当释放时候，会通过对象内存地址便利`weak`的`hashMap`，释放所有该对象的`weak`指针。
 
 </details>
+
+# class_copyPropertyList与class_copyIvarList区别
+
+<details>
+<summary>查看答案</summary>
+
+- `class_copyPropertyList`只返回了对象`@property`声明的属性
+- `class_copyIvarList`不仅返回对象`@property`的属性还包括了对象的实例变量。
+
+</details>
