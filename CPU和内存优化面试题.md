@@ -142,3 +142,14 @@ iOS的内存类型分为三种
 ![image-20200331094005407](https://raw.githubusercontent.com/joserccblog/uPic/upic/uPic/image-20200331094005407.png) 
 
 </details>
+
+# UI卡顿掉帧原因
+
+<details>
+<summary>查看答案</summary>
+
+![image-20200331094935050](https://raw.githubusercontent.com/joserccblog/uPic/upic/uPic/image-20200331094935050.png)
+
+当`CPU`和`GPU`处理时间大于`16.67ms`时候就会造成掉帧和卡顿。 
+
+</details>
