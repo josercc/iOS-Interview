@@ -133,3 +133,12 @@ iOS的内存类型分为三种
   - 纹理的渲染
 
 </details>
+
+# iOS视频成像的原理
+
+<details>
+<summary>查看答案</summary>
+
+![image-20200331094005407](https://raw.githubusercontent.com/joserccblog/uPic/upic/uPic/image-20200331094005407.png) 
+
+</details>
