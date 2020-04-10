@@ -111,7 +111,10 @@ iOS的内存类型分为三种
 <details>
 <summary>查看答案</summary>
 
-![image-20200331094005407](https://raw.githubusercontent.com/joserccblog/uPic/upic/uPic/image-20200331094005407.png) 
+
+![image-20200331094005407](https://tva1.sinaimg.cn/large/00831rSTgy1gdoj1hyfhlj30pu0fz3zo.jpg) 
+
+由CPU进行位图合成，交给GPU进行图层混合和纹理合成。GPU结果存放在缓冲区（Frame Buffer）中，再由视频控制器通过VSync信号在指定时间从缓冲区提取屏幕显示内容显示在显示器上。
 
 </details>
 
