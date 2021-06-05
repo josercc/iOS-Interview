@@ -437,7 +437,7 @@ dispatch_resume(timer);
 <details>
 <summary>查看答案</summary>
 	
-系统分配18个字节，但是真正占用只有8个字节。
+系统分配16个字节，但是真正占用只有8个字节。
 </details>
 
 # 方法和选择器有何不同？(Difference between method and selector?)
