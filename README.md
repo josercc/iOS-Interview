@@ -1,9 +1,6 @@
 # iOS-Interview
 iOS面试大全(自己结合网络要求技能整理和回答网络面试题，回答有错误请指正，我是菜鸟勿喷)
 
-## 如果想巩固知识或者查询资料请点击下面的链接前往
-[iOS面试大全知识库](iOS面试大全知识库/README.md)
-
 ## iOS面试知识点技能树
 [iOS面试知识点技能树](https://www.processon.com/view/link/5e69f598e4b07fc7a6845da5)
 
